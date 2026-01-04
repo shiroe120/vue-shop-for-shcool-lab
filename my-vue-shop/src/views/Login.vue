@@ -70,7 +70,7 @@ input {
 button {
   width: 100%;
   padding: 5px;
-  background-color: #42b983;
+  background-color: #000000;
   color: white;
   border: none;
   cursor: pointer;

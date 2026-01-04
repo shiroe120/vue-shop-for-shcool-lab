@@ -156,13 +156,20 @@ onMounted(() => {
   margin: 0 0 5px 0;
 }
 
-button {
+.info button {
   margin-top: 10px;
   padding: 5px 10px;
   background-color: #f56c6c;
   color: white;
   border: none;
   cursor: pointer;
+}
+
+.cart-controls button {
+  background-color: #000000;
+  margin-top: 0;
+  padding: 5px 10px;
+  color: white;
 }
 
 .error {

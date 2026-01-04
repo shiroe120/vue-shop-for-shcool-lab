@@ -15,7 +15,7 @@
   display: flex;
   gap: 20px;
   padding: 15px 20px;
-  background-color: #42b983;
+  background-color: #000000;
   margin-bottom: 20px;
 }
 

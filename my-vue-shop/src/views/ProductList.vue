@@ -89,7 +89,7 @@ onMounted(() => {
 }
 
 button {
-  background-color: #42b983;
+  background-color: #000000;
   color: white;
   border: none;
   padding: 5px 10px;
