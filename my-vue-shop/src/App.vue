@@ -4,10 +4,22 @@
       <router-link to="/products">商品列表</router-link>
       <router-link to="/cart">购物车</router-link>
       <router-link to="/orders">订单列表</router-link>
+      <button @click="logout" class="logout-btn">退出登录</button>
     </nav>
     <router-view />
   </div>
 </template>
+
+<script setup>
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const logout = () => {
+  localStorage.removeItem('userId');
+  router.push('/login');
+};
+</script>
 
 <style scoped>
 
@@ -27,5 +39,19 @@
 
 .navbar a:hover {
   text-decoration: underline;
+}
+
+.logout-btn {
+  margin-left: auto;
+  background-color: #f56c6c;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  background-color: #d32f2f;
 }
 </style>
