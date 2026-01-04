@@ -15,3 +15,7 @@ export const register = (name, password) =>
 export const getGoodsList = () => {
   return request.get('/goods/list');
 };
+
+export const getCartByUser = (userId) => {
+  return request.get(`/cart/listByUser`, { params: { userId } });
+};
