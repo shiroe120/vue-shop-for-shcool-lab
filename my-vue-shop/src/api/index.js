@@ -28,6 +28,13 @@ export const getOrdersByUser = (userId) => {
   return request.get('/order/listByUser', { params: { userId } });
 };
 
+// 添加商品到购物车
+export const addCartItem = (userId, goodsId, num, price) => {
+  return request.get('/cart/add', {
+    params: { userId, goodsId, num, price }
+  });
+};
+
 // 生成订单：后端接口要求 GET 参数 userId 和 cartList（逗号分隔的 cartId 列表）
 export const addCastOrder = (userId, cartList) => {
   return request.get('/order/addCastOrder', { params: { userId, cartList } });
