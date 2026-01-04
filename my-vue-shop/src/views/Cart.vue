@@ -160,10 +160,11 @@ onMounted(() => {
 .info button {
   margin-top: 10px;
   padding: 5px 10px;
-  background-color: #f56c6c;
+  background-color: #b14848;
   color: white;
   border: none;
   cursor: pointer;
+  border-radius: 8px;
 }
 
 .cart-controls button {
@@ -171,6 +172,7 @@ onMounted(() => {
   margin-top: 0;
   padding: 5px 10px;
   color: white;
+  border-radius: 8px;
 }
 
 .error {

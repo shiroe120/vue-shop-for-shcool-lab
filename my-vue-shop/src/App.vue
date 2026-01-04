@@ -49,6 +49,7 @@ const logout = () => {
   padding: 5px 15px;
   cursor: pointer;
   font-weight: bold;
+  border-radius: 8px;
 }
 
 .logout-btn:hover {

@@ -69,5 +69,6 @@ button {
   border: none;
   cursor: pointer;
   font-size: 16px;
+  border-radius: 8px;
 }
 </style>

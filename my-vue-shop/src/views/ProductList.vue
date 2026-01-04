@@ -93,8 +93,9 @@ button {
   background-color: #000000;
   color: white;
   border: none;
-  padding: 5px 10px;
+  padding: 10px 16px;
   cursor: pointer;
+  border-radius: 8px;
 }
 
 .error {

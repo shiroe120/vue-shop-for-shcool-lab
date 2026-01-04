@@ -1,6 +1,5 @@
 <template>
   <div class="login-page">
-    <h1>登录页面</h1>
     <form @submit.prevent="handleLogin">
       <div>
         <label>用户名：</label>
@@ -58,16 +57,17 @@ const handleLogin = async () => {
 <style scoped>
 .login-page {
   width: 500px;
-  margin: 50px auto;
+  margin: 160px auto;
+  font-size: 18px;
 }
 form div {
-  margin: 15px 0;
+  margin: 25px 0;
 }
 input {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: 18px;
 }
 button {
   width: 100%;
@@ -76,6 +76,7 @@ button {
   color: white;
   border: none;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
+  border-radius: 8px;
 }
 </style>
