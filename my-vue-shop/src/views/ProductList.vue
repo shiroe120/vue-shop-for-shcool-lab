@@ -80,6 +80,10 @@ onMounted(() => {
   padding: 10px;
   width: 200px;
   box-shadow: 2px 2px 8px #eee;
+  display: flex;
+  flex-direction: column;
+  height: 320px;
+  justify-content: space-between;
 }
 
 .product-item img {
