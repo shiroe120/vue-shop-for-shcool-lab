@@ -43,8 +43,8 @@ const logout = () => {
 
 .logout-btn {
   margin-left: auto;
-  background-color: #f56c6c;
-  color: white;
+  background-color: #d8d8d8;
+  color: rgb(31, 31, 31);
   border: none;
   padding: 5px 15px;
   cursor: pointer;
@@ -52,6 +52,6 @@ const logout = () => {
 }
 
 .logout-btn:hover {
-  background-color: #d32f2f;
+  background-color: #ffffff;
 }
 </style>
