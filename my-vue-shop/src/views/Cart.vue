@@ -124,6 +124,14 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.cart-controls {
+  margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
 .cart-list {
   display: flex;
   flex-direction: column;
