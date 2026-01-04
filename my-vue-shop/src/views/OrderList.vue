@@ -1,16 +1,104 @@
-<!-- src/views/OrderList.vue -->
 <template>
-  <div>
-    <h1>订单列表页面</h1>
+  <div class="order-page">
+    <h1>我的订单</h1>
+
+    <div v-if="loading">加载中...</div>
+    <div v-if="error" class="error">{{ error }}</div>
+    <div v-if="orders.length === 0 && !loading">暂无订单</div>
+
+    <div class="order-list">
+      <div class="order-item" v-for="order in orders" :key="order.id">
+        <h3>订单时间：{{ order.orderTime }}</h3>
+        <table class="order-detail">
+          <thead>
+            <tr>
+              <th>商品名</th>
+              <th>数量</th>
+              <th>成交价</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="item in order.orderDetail" :key="item.OrderDetailid">
+              <td>{{ item.goodsName }}</td>
+              <td>{{ parseNums(item.nums).num }}</td>
+              <td>¥{{ parseNums(item.nums).dealPrice }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
+import { getOrdersByUser } from '../api/index.js';
+
+const orders = ref([]);
+const loading = ref(false);
+const error = ref('');
+
+const userId = localStorage.getItem('userId');
+
+const fetchOrders = async () => {
+  if (!userId) {
+    error.value = '用户未登录';
+    return;
+  }
+
+  loading.value = true;
+  error.value = '';
+  try {
+    const res = await getOrdersByUser(userId);
+    orders.value = res.data || [];
+  } catch (err) {
+    console.error(err);
+    error.value = '加载订单失败';
+  } finally {
+    loading.value = false;
+  }
+};
+
+// 解析 nums 字段 "1, dealPrice=1300.0" -> {num: 1, dealPrice: 1300.0}
+const parseNums = (numsStr) => {
+  const [numPart, pricePart] = numsStr.split(',');
+  const num = parseInt(numPart.trim());
+  const dealPrice = parseFloat(pricePart.split('=')[1]);
+  return { num, dealPrice };
+};
+
+onMounted(() => {
+  fetchOrders();
+});
 </script>
 
 <style scoped>
-h1 {
-  text-align: center;
-  margin-top: 50px;
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.order-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.order-detail {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.order-detail th,
+.order-detail td {
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  text-align: left;
+}
+
+.error {
+  color: red;
 }
 </style>

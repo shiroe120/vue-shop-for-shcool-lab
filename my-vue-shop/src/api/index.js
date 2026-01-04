@@ -19,3 +19,16 @@ export const getGoodsList = () => {
 export const getCartByUser = (userId) => {
   return request.get(`/cart/listByUser`, { params: { userId } });
 };
+
+export const deleteCartItem = (userId, cartId) => {
+  return request.get(`/cart/deleteById`, { params: { userId, cartId } });
+};
+
+export const getOrdersByUser = (userId) => {
+  return request.get('/order/listByUser', { params: { userId } });
+};
+
+// 生成订单：后端接口要求 GET 参数 userId 和 cartList（逗号分隔的 cartId 列表）
+export const addCastOrder = (userId, cartList) => {
+  return request.get('/order/addCastOrder', { params: { userId, cartList } });
+};
