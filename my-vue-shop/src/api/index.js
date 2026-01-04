@@ -11,7 +11,7 @@ export const login = (name, password) =>
 
 export const register = (name, password) =>
   request.get('/user/register', { params: { name, password } });
-// ⭐ 获取商品列表
+
 export const getGoodsList = () => {
   return request.get('/goods/list');
 };

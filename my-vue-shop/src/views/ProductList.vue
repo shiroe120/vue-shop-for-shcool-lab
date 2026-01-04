@@ -11,7 +11,7 @@
         v-for="item in goodsList"
         :key="item.id"
       >
-        <img :src="getImageUrl(item.pthumbnail)" />
+        <img :src="`/goodsimage/${item.pthumbnail.split('/').pop()}`" />
         <h3>{{ item.name }}</h3>
         <p>价格：¥ {{ item.price1 }}</p>
       </div>
@@ -26,11 +26,6 @@ import { getGoodsList } from '../api';
 const goodsList = ref([]);
 const loading = ref(false);
 const error = ref('');
-
-// 拼接图片地址
-const getImageUrl = (path) => {
-  return `http://10.60.81.45:8080/${path}`;
-};
 
 const fetchGoods = async () => {
   loading.value = true;
