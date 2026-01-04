@@ -89,11 +89,11 @@ onMounted(() => {
   flex-direction: column;
   gap: 30px;
   margin-top: 20px;
-  padding: 50px 400px;
+  padding: 50px 320px;
 }
 
 .order-item {
-  border: 1px solid #ddd;
+  border: 1px solid #acacac;
   padding: 10px;
 }
 

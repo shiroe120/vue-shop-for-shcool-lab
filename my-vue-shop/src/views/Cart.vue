@@ -1,7 +1,5 @@
 <template>
   <div class="cart-page">
-    <h1>购物车</h1>
-
     <div v-if="loading">加载中...</div>
     <div v-if="error" class="error">{{ error }}</div>
     <div v-if="cartList.length === 0 && !loading">购物车为空</div>
@@ -125,7 +123,8 @@ onMounted(() => {
 
 <style scoped>
 .cart-controls {
-  margin-bottom: 20px;
+    margin-bottom: 30px;
+    margin-top: 60px;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -135,8 +134,8 @@ onMounted(() => {
 .cart-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 0 20px;
+  gap: 30px;
+  padding: 0 300px;
 }
 
 .cart-item {
@@ -144,6 +143,7 @@ onMounted(() => {
   align-items: center;
   border: 1px solid #ddd;
   padding: 10px;
+  box-shadow: 2px 2px 8px #eee;
 }
 
 .cart-item img {

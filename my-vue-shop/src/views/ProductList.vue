@@ -72,13 +72,14 @@ onMounted(() => {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 0 200px;
+  padding: 0 120px;
 }
 
 .product-item {
   border: 1px solid #ddd;
   padding: 10px;
   width: 200px;
+  box-shadow: 2px 2px 8px #eee;
 }
 
 .product-item img {

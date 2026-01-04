@@ -49,22 +49,25 @@ const handleRegister = async () => {
 
 <style scoped>
 .register-page {
-  width: 300px;
+  width: 500px;
   margin: 50px auto;
 }
 form div {
-  margin: 10px 0;
+  margin: 15px 0;
 }
 input {
   width: 100%;
-  padding: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
 }
 button {
   width: 100%;
-  padding: 5px;
+  padding: 12px;
   background-color: #000000;
   color: white;
   border: none;
   cursor: pointer;
+  font-size: 16px;
 }
 </style>
