@@ -101,6 +101,7 @@ onMounted(() => {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
+  table-layout: fixed;
 }
 
 .order-detail th,
@@ -108,6 +109,24 @@ onMounted(() => {
   border: 1px solid #ccc;
   padding: 5px 10px;
   text-align: left;
+  word-wrap: break-word;
+}
+
+.order-detail th:nth-child(1),
+.order-detail td:nth-child(1) {
+  width: 50%;
+}
+
+.order-detail th:nth-child(2),
+.order-detail td:nth-child(2) {
+  width: 25%;
+  text-align: center;
+}
+
+.order-detail th:nth-child(3),
+.order-detail td:nth-child(3) {
+  width: 25%;
+  text-align: center;
 }
 
 .error {
