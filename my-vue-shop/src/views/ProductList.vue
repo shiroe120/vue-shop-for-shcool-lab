@@ -1,6 +1,5 @@
 <template>
   <div class="products-page">
-    <h1>商品列表</h1>
 
     <div v-if="loading">加载中...</div>
     <div v-if="error" class="error">{{ error }}</div>
@@ -73,6 +72,7 @@ onMounted(() => {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  padding: 0 20px;
 }
 
 .product-item {

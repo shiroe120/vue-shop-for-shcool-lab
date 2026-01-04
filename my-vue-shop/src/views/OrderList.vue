@@ -1,6 +1,5 @@
 <template>
   <div class="order-page">
-    <h1>我的订单</h1>
 
     <div v-if="loading">加载中...</div>
     <div v-if="error" class="error">{{ error }}</div>
@@ -90,6 +89,7 @@ onMounted(() => {
   flex-direction: column;
   gap: 30px;
   margin-top: 20px;
+  padding: 50px 400px;
 }
 
 .order-item {
