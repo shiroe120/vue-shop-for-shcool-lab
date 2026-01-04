@@ -8,7 +8,7 @@
 
     <div class="order-list">
       <div class="order-item" v-for="order in orders" :key="order.id">
-        <h3>订单时间：{{ order.orderTime }}</h3>
+        <h3>订单时间：{{ formatTime(order.orderTime) }}</h3>
         <table class="order-detail">
           <thead>
             <tr>
@@ -65,6 +65,18 @@ const parseNums = (numsStr) => {
   const num = parseInt(numPart.trim());
   const dealPrice = parseFloat(pricePart.split('=')[1]);
   return { num, dealPrice };
+};
+
+// 格式化时间为中文格式 
+const formatTime = (timeStr) => {
+  const date = new Date(timeStr);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  const seconds = String(date.getSeconds()).padStart(2, '0');
+  return `${year}年${month}月${day}日 ${hours}:${minutes}:${seconds}`;
 };
 
 onMounted(() => {
