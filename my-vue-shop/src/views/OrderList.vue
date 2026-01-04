@@ -87,7 +87,7 @@ onMounted(() => {
 .order-list {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 50px;
   margin-top: 20px;
   padding: 50px 320px;
 }

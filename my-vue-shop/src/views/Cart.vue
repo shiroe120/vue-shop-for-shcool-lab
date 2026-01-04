@@ -143,6 +143,7 @@ onMounted(() => {
   align-items: center;
   border: 1px solid #ddd;
   padding: 10px;
+  gap: 20px;
   box-shadow: 2px 2px 8px #eee;
 }
 
