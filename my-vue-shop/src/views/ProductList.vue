@@ -72,7 +72,7 @@ onMounted(() => {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 0 20px;
+  padding: 0 200px;
 }
 
 .product-item {
