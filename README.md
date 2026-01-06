@@ -1,6 +1,6 @@
 # Vue Shop for School Lab
 
-本项目为GUET软件工程专业大二下学期 Web 前端课程大作业，练习之作。
+本项目为GUET软件工程专业大二 Web 前端课程大作业，练习之作。
 
 ---
 
